@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    label,
+    input {
+        font-size: large;
+        width: 80%;
+        height: 30px;
+
+
+    }
+</style>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Bai tap luyen tap bien, gan, toan tu</legend>
+            <label for="doC"> Nhap Do C</label>
+            <br> <br><br>
+            <input type="number" name="doC" id="doC">
+            <br> <br><br>
+            <button onclick="doiNhietDo()">Chuyen doi</button>
+            <br> <br><br>
+            <label for="doC"> Do F la: </label>
+            <br> <br><br>
+            <input type="number" name="doF" id="doF">
+            <br><br>
+            <hr>
+
+            <label for="r">Nhap Ban Kinh</label> <br><br><br>
+            <input type="number" value="" id="bankinh">
+            <br><br><br>
+            <button onclick="tinhDienTich()">TINH DIEN TICH</button> <br><br><br>
+            <label for="">Dien tich hinh tron la: </label> <br><br><br>
+            <input type="number" id="dientich">
+            <hr>
+            <button onclick="tinhChuVi()">TINH CHU VI</button> <BR></BR><BR></BR><BR></BR>
+            <label for="">Chu vi hinh tron la: </label> <br><br><br>
+            <input type="number" id="chuvi">
+
+        </fieldset>
+    </form>
+</body>
+<script>
+    // <!-- Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này. -->
+    let diemLy = parseInt(prompt("Nhap diem Ly: "));
+    let diemHoa = parseInt(prompt("Nhap diem Hoa: "));
+    let diemSinh = parseInt(prompt("Nhap diem Sinh: "));
+    let average = (diemHoa + diemLy + diemSinh) / 3;
+    let tong = diemHoa + diemLy + diemSinh;
+    alert("Trung binh cong cua hoc sinh nay la: " + average);
+    alert("Tong cua 3 diem nay la: " + tong);
+
+    function doiNhietDo() {
+        let doC = document.getElementById("doC").value;
+        console.log(doC);
+        document.getElementById("doF").value = 5 * doC / 9 + 32;
+    }
+    function tinhDienTich() {
+        let r = document.getElementById("bankinh").value;
+        document.getElementById("dientich").value = r * r * 3.14;
+
+    }
+    function tinhChuVi() {
+        let r = document.getElementById("bankinh").value;
+
+        document.getElementById("chuvi").value = 2 * r * 3.14;
+
+    }
+
+
+</script>
+
+</html>
